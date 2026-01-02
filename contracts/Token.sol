@@ -17,4 +17,10 @@ contract Token is ERC20 {
         require(totalSupply() + amount <= MAX_SUPPLY, "Exceeds maximum supply");
         _mint(to, amount);
     }
+
+    function transferMinterRole(address newMinter) external {
+        require(msg.sender == minter, "Only current minter can transfer role");
+        require(newMinter != address(0), "New minter cannot be zero address");
+        minter = newMinter;
+    }
 }

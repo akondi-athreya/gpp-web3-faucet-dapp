@@ -31,17 +31,18 @@ async function main() {
   console.log("Predicted Faucet address:", futureFaucetAddress);
   console.log();
 
-  // Deploy Token contract with future Faucet address as minter
+  // Deploy Token contract with deployer as temporary minter
+  // (We'll set Faucet as minter later)
   console.log("Deploying Token contract...");
   const Token = await ethers.getContractFactory("Token");
-  const token = await Token.deploy(futureFaucetAddress);
+  const token = await Token.deploy(deployer.address);
   await token.waitForDeployment();
   const tokenAddress = await token.getAddress();
   console.log("Token deployed to:", tokenAddress);
   console.log("Token name:", await token.name());
   console.log("Token symbol:", await token.symbol());
   console.log("Max supply:", ethers.formatEther(await token.MAX_SUPPLY()), "tokens");
-  console.log("Minter address:", await token.minter());
+  console.log("Current minter:", await token.minter());
   console.log();
 
   // Deploy TokenFaucet contract with Token address
@@ -65,14 +66,43 @@ async function main() {
     console.warn("WARNING: Faucet address doesn't match prediction!");
   }
 
-  // Verify minter is correctly set
+  // Verify minter is correctly set (should be deployer initially)
   const minter = await token.minter();
-  if (minter === faucetAddress) {
-    console.log("✓ Minter correctly set to Faucet address");
-  } else {
-    console.error("✗ ERROR: Minter is not set to Faucet address!");
-  }
+  console.log("Current minter:", minter);
   console.log();
+
+  // MINT TOKENS TO FAUCET
+  console.log("Minting 10,000 tokens to TokenFaucet contract...");
+  
+  try {
+    // Mint tokens while deployer is still the minter
+    const mintAmount = ethers.parseEther("10000");
+    const mintTx = await token.mint(faucetAddress, mintAmount);
+    console.log("Mint transaction sent:", mintTx.hash);
+    
+    const mintReceipt = await mintTx.wait();
+    console.log("✓ Minting completed in block", mintReceipt.blockNumber);
+    
+    // Verify balance
+    const faucetBalance = await token.balanceOf(faucetAddress);
+    console.log("✓ Faucet balance verified:", ethers.formatEther(faucetBalance), "tokens");
+    console.log();
+    
+    // Now transfer minter role to Faucet
+    console.log("Transferring minter role to Faucet contract...");
+    const roleTx = await token.transferMinterRole(faucetAddress);
+    console.log("Role transfer transaction sent:", roleTx.hash);
+    
+    const roleReceipt = await roleTx.wait();
+    console.log("✓ Minter role transferred in block", roleReceipt.blockNumber);
+    
+    const newMinter = await token.minter();
+    console.log("✓ New minter is:", newMinter);
+    console.log();
+  } catch (error) {
+    console.error("✗ ERROR during minting:", error.message);
+    process.exit(1);
+  }
 
   // Save deployment addresses to file
   const deploymentInfo = {
