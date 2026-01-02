@@ -186,8 +186,21 @@ class ContractManager {
    * Request tokens from faucet
    */
   async requestTokens() {
-    if (!this.faucetContract || !this.signer) {
-      throw new Error("Signer not initialized. Please connect wallet first.");
+    // Check if signer is available
+    if (!this.signer) {
+      // Try to get signer from window.ethereum if not initialized
+      try {
+        const { ethers } = await import("ethers");
+        const provider = new ethers.BrowserProvider(window.ethereum);
+        const signer = await provider.getSigner();
+        await this.initializeWithSigner(signer);
+      } catch (error) {
+        throw new Error("Signer not initialized. Please connect wallet first.");
+      }
+    }
+
+    if (!this.faucetContract) {
+      throw new Error("Faucet contract not initialized. Please connect wallet first.");
     }
 
     try {
