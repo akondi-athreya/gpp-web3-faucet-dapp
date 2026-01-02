@@ -10,10 +10,10 @@ import TokenFaucetABI from "./TokenFaucet.json";
 // Contract addresses - should be loaded from environment variables
 const TOKEN_ADDRESS =
   import.meta.env.VITE_TOKEN_ADDRESS ||
-  "0x426C1217EE4B94dcb63BD9561864Ec72F8B9e2df";
+  "0xC03C396369C2876949dd0Cc228214927c00b80aC";
 const FAUCET_ADDRESS =
   import.meta.env.VITE_FAUCET_ADDRESS ||
-  "0xb65a086501207b787c60b2e9bA9dCD2c147bc654";
+  "0xf3762351Bc172cb9C709cd7385Fa0889E75860E2";
 const RPC_URL =
   import.meta.env.VITE_RPC_URL || "https://sepolia.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161";
 
