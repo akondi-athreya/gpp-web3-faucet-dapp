@@ -20,11 +20,11 @@ FROM node:20-alpine
 
 WORKDIR /app
 
-# Install serve to run the application
-RUN npm install -g serve
-
 # Copy built application from builder
 COPY --from=builder /app/dist ./dist
+
+# Copy server file
+COPY server.js ./
 
 # Expose port
 EXPOSE 5000
@@ -34,4 +34,4 @@ HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 \
   CMD node -e "require('http').get('http://localhost:5000/health', (r) => {if (r.statusCode !== 200) throw new Error(r.statusCode)})"
 
 # Start the application
-CMD ["serve", "-s", "dist", "-l", "5000"]
+CMD ["node", "server.js"]
