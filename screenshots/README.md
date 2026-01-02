@@ -233,20 +233,20 @@ This directory contains screenshots of the application demonstrating all key fea
 
 ## Verification Checklist
 
-- [ ] Screenshot 1: Wallet Connection
-- [ ] Screenshot 2: Wallet Connected
-- [ ] Screenshot 3: Balance Display
-- [ ] Screenshot 4: Successful Claim
-- [ ] Screenshot 5: Cooldown Timer
+- [x] Screenshot 1: Wallet Connection
+- [x] Screenshot 2: Wallet Connected
+- [x] Screenshot 3: Balance Display
+- [x] Screenshot 4: Successful Claim
+- [x] Screenshot 5: Cooldown Timer
 - [ ] Screenshot 6: Cooldown Error
 - [ ] Screenshot 7: Limit Reached
 - [ ] Screenshot 8: Paused State
 - [ ] Screenshot 9: TX Confirmation
-- [ ] Screenshot 10: Loading State
-- [ ] Screenshot 11: Low Balance (Optional)
+- [x] Screenshot 10: Loading State
+- [x] Screenshot 11: Low Balance (Optional)
 - [ ] Screenshot 12: Mobile View (Optional)
 
-**Note**: At minimum, screenshots 1-10 are required. Screenshots 11-12 are optional but recommended.
+**Note**: At minimum, screenshots 1-10 are required. Screenshots 06-09 remain to be captured; screenshots 11-12 are optional but recommended when available.
 
 ---
 

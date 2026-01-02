@@ -21,7 +21,7 @@ A fully functional Web3 decentralized application for token distribution on Ethe
 **Token.sol** - ERC-20 Token Contract
 - ✅ Max Supply: 1,000,000 tokens
 - ✅ Minting Role: Only Faucet contract can mint
-- ✅ Deployed: `0x426C1217EE4B94dcb63BD9561864Ec72F8B9e2df`
+- ✅ Deployed: `0xC03C396369C2876949dd0Cc228214927c00b80aC`
 - ✅ Verified on Etherscan
 
 **TokenFaucet.sol** - Faucet Distribution Contract
@@ -29,7 +29,7 @@ A fully functional Web3 decentralized application for token distribution on Ethe
 - ✅ Cooldown: 24-hour enforcement (immutable)
 - ✅ Lifetime Limit: 1,000 tokens per user
 - ✅ Pause/Unpause: Owner controls availability
-- ✅ Deployed: `0xb65a086501207b787c60b2e9bA9dCD2c147bc654`
+- ✅ Deployed: `0xf3762351Bc172cb9C709cd7385Fa0889E75860E2`
 - ✅ Verified on Etherscan
 
 **Testing Suite**

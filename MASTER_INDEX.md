@@ -211,11 +211,11 @@
 
 ## 🔗 Contract Addresses (Sepolia Testnet)
 
-- **Token Contract**: `0x426C1217EE4B94dcb63BD9561864Ec72F8B9e2df`
-  - [View on Etherscan](https://sepolia.etherscan.io/address/0x426C1217EE4B94dcb63BD9561864Ec72F8B9e2df)
+- **Token Contract**: `0xC03C396369C2876949dd0Cc228214927c00b80aC`
+  - [View on Etherscan](https://sepolia.etherscan.io/address/0xC03C396369C2876949dd0Cc228214927c00b80aC)
 
-- **Faucet Contract**: `0xb65a086501207b787c60b2e9bA9dCD2c147bc654`
-  - [View on Etherscan](https://sepolia.etherscan.io/address/0xb65a086501207b787c60b2e9bA9dCD2c147bc654)
+- **Faucet Contract**: `0xf3762351Bc172cb9C709cd7385Fa0889E75860E2`
+  - [View on Etherscan](https://sepolia.etherscan.io/address/0xf3762351Bc172cb9C709cd7385Fa0889E75860E2)
 
 ---
 

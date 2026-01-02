@@ -77,8 +77,8 @@ const {token, faucet} = window.__EVAL__.getContractAddresses();
 
 | Contract | Address | Etherscan |
 |----------|---------|-----------|
-| Token | `0x426C1217EE4B94dcb63BD9561864Ec72F8B9e2df` | [View](https://sepolia.etherscan.io/address/0x426C1217EE4B94dcb63BD9561864Ec72F8B9e2df) |
-| Faucet | `0xb65a086501207b787c60b2e9bA9dCD2c147bc654` | [View](https://sepolia.etherscan.io/address/0xb65a086501207b787c60b2e9bA9dCD2c147bc654) |
+| Token | `0xC03C396369C2876949dd0Cc228214927c00b80aC` | [View](https://sepolia.etherscan.io/address/0xC03C396369C2876949dd0Cc228214927c00b80aC) |
+| Faucet | `0xf3762351Bc172cb9C709cd7385Fa0889E75860E2` | [View](https://sepolia.etherscan.io/address/0xf3762351Bc172cb9C709cd7385Fa0889E75860E2) |
 
 ---
 
@@ -88,9 +88,9 @@ const {token, faucet} = window.__EVAL__.getContractAddresses();
 
 ```bash
 # Frontend/.env.local
-VITE_TOKEN_ADDRESS=0x426C1217EE4B94dcb63BD9561864Ec72F8B9e2df
-VITE_FAUCET_ADDRESS=0xb65a086501207b787c60b2e9bA9dCD2c147bc654
-VITE_RPC_URL=https://sepolia.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161
+VITE_TOKEN_ADDRESS=0xC03C396369C2876949dd0Cc228214927c00b80aC
+VITE_FAUCET_ADDRESS=0xf3762351Bc172cb9C709cd7385Fa0889E75860E2
+VITE_RPC_URL=https://1rpc.io/sepolia
 ```
 
 ### Docker Environment
@@ -98,9 +98,9 @@ VITE_RPC_URL=https://sepolia.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161
 ```bash
 # .env file for docker-compose
 PORT=5000
-VITE_TOKEN_ADDRESS=0x426C1217EE4B94dcb63BD9561864Ec72F8B9e2df
-VITE_FAUCET_ADDRESS=0xb65a086501207b787c60b2e9bA9dCD2c147bc654
-VITE_RPC_URL=https://sepolia.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161
+VITE_TOKEN_ADDRESS=0xC03C396369C2876949dd0Cc228214927c00b80aC
+VITE_FAUCET_ADDRESS=0xf3762351Bc172cb9C709cd7385Fa0889E75860E2
+VITE_RPC_URL=https://1rpc.io/sepolia
 ```
 
 ---

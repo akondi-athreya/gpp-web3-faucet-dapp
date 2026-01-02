@@ -10,9 +10,9 @@ services:
       - "${PORT:-5000}:5000"
     environment:
       - PORT=5000
-      - VITE_TOKEN_ADDRESS=${VITE_TOKEN_ADDRESS:-0x426C1217EE4B94dcb63BD9561864Ec72F8B9e2df}
-      - VITE_FAUCET_ADDRESS=${VITE_FAUCET_ADDRESS:-0xb65a086501207b787c60b2e9bA9dCD2c147bc654}
-      - VITE_RPC_URL=${VITE_RPC_URL:-https://sepolia.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161}
+      - VITE_TOKEN_ADDRESS=${VITE_TOKEN_ADDRESS:-0xC03C396369C2876949dd0Cc228214927c00b80aC}
+      - VITE_FAUCET_ADDRESS=${VITE_FAUCET_ADDRESS:-0xf3762351Bc172cb9C709cd7385Fa0889E75860E2}
+      - VITE_RPC_URL=${VITE_RPC_URL:-https://1rpc.io/sepolia}
     healthcheck:
       test: ["CMD", "node", "-e", "require('http').get('http://localhost:5000/health', (r) => {if (r.statusCode !== 200) throw new Error(r.statusCode)})"]
       interval: 30s

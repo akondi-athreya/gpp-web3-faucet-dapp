@@ -126,8 +126,8 @@
 
 ### Testnet Deployment ✅
 - ✅ Deployed to Sepolia testnet (Chain ID: 11155111)
-- ✅ Token: `0x426C1217EE4B94dcb63BD9561864Ec72F8B9e2df`
-- ✅ Faucet: `0xb65a086501207b787c60b2e9bA9dCD2c147bc654`
+- ✅ Token: `0xC03C396369C2876949dd0Cc228214927c00b80aC`
+- ✅ Faucet: `0xf3762351Bc172cb9C709cd7385Fa0889E75860E2`
 - ✅ Deployment script: `scripts/deploy.js`
 
 ### Etherscan Verification ✅

@@ -105,7 +105,7 @@
 
 **Lines of Code**: ~100
 
-**Deployed**: `0x426C1217EE4B94dcb63BD9561864Ec72F8B9e2df`
+**Deployed**: `0xC03C396369C2876949dd0Cc228214927c00b80aC`
 
 ---
 
@@ -125,7 +125,7 @@
 
 **Lines of Code**: ~150
 
-**Deployed**: `0xb65a086501207b787c60b2e9bA9dCD2c147bc654`
+**Deployed**: `0xf3762351Bc172cb9C709cd7385Fa0889E75860E2`
 
 ---
 
@@ -316,8 +316,8 @@ Records deployed contract addresses:
 ```json
 {
   "network": "sepolia",
-  "token": "0x426C1217EE4B94dcb63BD9561864Ec72F8B9e2df",
-  "faucet": "0xb65a086501207b787c60b2e9bA9dCD2c147bc654",
+  "token": "0xC03C396369C2876949dd0Cc228214927c00b80aC",
+  "faucet": "0xf3762351Bc172cb9C709cd7385Fa0889E75860E2",
   "deployer": "0x..."
 }
 ```

@@ -47,7 +47,7 @@
 - ✅ ERC-20 compliant implementation
 - ✅ MAX_SUPPLY = 1,000,000 tokens
 - ✅ Minter role enforcement
-- ✅ Deployed to 0x426C1217EE4B94dcb63BD9561864Ec72F8B9e2df
+- ✅ Deployed to 0xC03C396369C2876949dd0Cc228214927c00b80aC
 - ✅ Verified on Etherscan
 
 **TokenFaucet.sol**
@@ -57,7 +57,7 @@
 - ✅ All 5 required functions: requestTokens, canClaim, remainingAllowance, isPaused, setPaused
 - ✅ 2 required events: TokensClaimed, FaucetPaused
 - ✅ All state tracking: lastClaimAt, totalClaimed mappings
-- ✅ Deployed to 0xb65a086501207b787c60b2e9bA9dCD2c147bc654
+- ✅ Deployed to 0xf3762351Bc172cb9C709cd7385Fa0889E75860E2
 - ✅ Verified on Etherscan
 
 ### Frontend ✅

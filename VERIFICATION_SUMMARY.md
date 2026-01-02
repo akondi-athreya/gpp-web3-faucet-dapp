@@ -100,8 +100,8 @@ I have conducted a comprehensive review of the entire Web3 Faucet DApp codebase 
 - **File**: `frontend/.env.example`
 - **Content**: 
   ```
-  VITE_TOKEN_ADDRESS=0x426C1217EE4B94dcb63BD9561864Ec72F8B9e2df
-  VITE_FAUCET_ADDRESS=0xb65a086501207b787c60b2e9bA9dCD2c147bc654
+  VITE_TOKEN_ADDRESS=0xC03C396369C2876949dd0Cc228214927c00b80aC
+  VITE_FAUCET_ADDRESS=0xf3762351Bc172cb9C709cd7385Fa0889E75860E2
   VITE_RPC_URL=https://sepolia.infura.io/v3/YOUR_INFURA_PROJECT_ID
   ```
 - **Status**: ✅ Created and ready
@@ -264,8 +264,8 @@ If port 3000 is strictly required for Docker:
 
 | Contract | Address | Etherscan |
 |----------|---------|-----------|
-| Token | `0x426C1217EE4B94dcb63BD9561864Ec72F8B9e2df` | ✓ Verified |
-| Faucet | `0xb65a086501207b787c60b2e9bA9dCD2c147bc654` | ✓ Verified |
+| Token | `0xC03C396369C2876949dd0Cc228214927c00b80aC` | ✓ Verified |
+| Faucet | `0xf3762351Bc172cb9C709cd7385Fa0889E75860E2` | ✓ Verified |
 
 ---
 

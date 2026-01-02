@@ -30,11 +30,11 @@ Professional Documentation
 
 ### Smart Contracts ✅
 - **Token.sol** - ERC-20 with max supply control
-  - Deployed: `0x426C1217EE4B94dcb63BD9561864Ec72F8B9e2df`
+  - Deployed: `0xC03C396369C2876949dd0Cc228214927c00b80aC`
   - Verified ✓
   
 - **TokenFaucet.sol** - Distribution with cooldown & limits
-  - Deployed: `0xb65a086501207b787c60b2e9bA9dCD2c147bc654`
+  - Deployed: `0xf3762351Bc172cb9C709cd7385Fa0889E75860E2`
   - Verified ✓
 
 ### Testing ✅
@@ -201,8 +201,8 @@ const txHash = await window.__EVAL__.requestTokens();
 
 | Contract | Address | Etherscan |
 |----------|---------|-----------|
-| **Token** | `0x426C1217EE4B94dcb63BD9561864Ec72F8B9e2df` | ✓ Verified |
-| **Faucet** | `0xb65a086501207b787c60b2e9bA9dCD2c147bc654` | ✓ Verified |
+| **Token** | `0xC03C396369C2876949dd0Cc228214927c00b80aC` | ✓ Verified |
+| **Faucet** | `0xf3762351Bc172cb9C709cd7385Fa0889E75860E2` | ✓ Verified |
 
 ---
 

@@ -336,9 +336,9 @@ Gets the deployed contract addresses.
 ```javascript
 const {token, faucet} = window.__EVAL__.getContractAddresses();
 console.log('Token:', token);
-// 0x426C1217EE4B94dcb63BD9561864Ec72F8B9e2df
+// 0xC03C396369C2876949dd0Cc228214927c00b80aC
 console.log('Faucet:', faucet);
-// 0xb65a086501207b787c60b2e9bA9dCD2c147bc654
+// 0xf3762351Bc172cb9C709cd7385Fa0889E75860E2
 ```
 
 ---

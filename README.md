@@ -234,11 +234,10 @@ The application has been tested and documented with comprehensive screenshots sh
 - **[03-balance-display.png](screenshots/03-balance-display.png)** - Token balance and claim button
 - **[04-successful-claim.png](screenshots/04-successful-claim.png)** - Successful token claim with transaction hash
 - **[05-cooldown-timer.png](screenshots/05-cooldown-timer.png)** - Active cooldown countdown timer
-- **[06-cooldown-error.png](screenshots/06-cooldown-error.png)** - Error message during cooldown period
-- **[07-limit-reached.png](screenshots/07-limit-reached.png)** - Lifetime limit reached error
-- **[08-paused-state.png](screenshots/08-paused-state.png)** - Faucet paused state
-- **[09-tx-confirmation.png](screenshots/09-tx-confirmation.png)** - MetaMask transaction confirmation
 - **[10-transaction-pending.png](screenshots/10-transaction-pending.png)** - Transaction pending state
+- **[11-insufficient-balance.png](screenshots/11-insufficient-balance.png)** - Low balance warning for gas fees
+
+Pending capture (to be added): 06-cooldown-error, 07-limit-reached, 08-paused-state, 09-tx-confirmation
 
 For detailed screenshot information, see [screenshots/README.md](screenshots/README.md)
 
@@ -280,9 +279,9 @@ ERC-20 token contract with fixed max supply.
 - balanceOf(account): Get balance (ERC-20 standard)
 ```
 
-**Deployment Address**: `0x426C1217EE4B94dcb63BD9561864Ec72F8B9e2df`
+**Deployment Address**: `0xC03C396369C2876949dd0Cc228214927c00b80aC`
 
-**Verified**: ✅ [View on Etherscan](https://sepolia.etherscan.io/address/0x426C1217EE4B94dcb63BD9561864Ec72F8B9e2df)
+**Verification**: Pending (manual Etherscan verification recommended) — [Etherscan](https://sepolia.etherscan.io/address/0xC03C396369C2876949dd0Cc228214927c00b80aC)
 
 ### TokenFaucet.sol
 
@@ -306,9 +305,9 @@ Faucet contract managing token distribution.
 - setPaused(paused): Pause/unpause (owner)
 ```
 
-**Deployment Address**: `0xb65a086501207b787c60b2e9bA9dCD2c147bc654`
+**Deployment Address**: `0xf3762351Bc172cb9C709cd7385Fa0889E75860E2`
 
-**Verified**: ✅ [View on Etherscan](https://sepolia.etherscan.io/address/0xb65a086501207b787c60b2e9bA9dCD2c147bc654)
+**Verification**: Pending (manual Etherscan verification recommended) — [Etherscan](https://sepolia.etherscan.io/address/0xf3762351Bc172cb9C709cd7385Fa0889E75860E2)
 
 ## 🎨 Frontend
 
@@ -363,9 +362,9 @@ Faucet contract managing token distribution.
 
 ```bash
 PORT=5000                                          # Server port
-VITE_TOKEN_ADDRESS=0x426C1...                      # Token contract address
-VITE_FAUCET_ADDRESS=0xb65a...                      # Faucet contract address
-VITE_RPC_URL=https://sepolia.infura.io/v3/...     # Sepolia RPC endpoint
+VITE_TOKEN_ADDRESS=0xC03C396369C2876949dd0Cc228214927c00b80aC
+VITE_FAUCET_ADDRESS=0xf3762351Bc172cb9C709cd7385Fa0889E75860E2
+VITE_RPC_URL=https://1rpc.io/sepolia               # Sepolia RPC endpoint
 ```
 
 ## ⚙️ Configuration
@@ -375,9 +374,9 @@ VITE_RPC_URL=https://sepolia.infura.io/v3/...     # Sepolia RPC endpoint
 Create `.env.local` in `frontend/` directory:
 
 ```
-VITE_TOKEN_ADDRESS=0x426C1217EE4B94dcb63BD9561864Ec72F8B9e2df
-VITE_FAUCET_ADDRESS=0xb65a086501207b787c60b2e9bA9dCD2c147bc654
-VITE_RPC_URL=https://sepolia.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161
+VITE_TOKEN_ADDRESS=0xC03C396369C2876949dd0Cc228214927c00b80aC
+VITE_FAUCET_ADDRESS=0xf3762351Bc172cb9C709cd7385Fa0889E75860E2
+VITE_RPC_URL=https://1rpc.io/sepolia
 ```
 
 ### Production Environment
@@ -385,9 +384,9 @@ VITE_RPC_URL=https://sepolia.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161
 Set environment variables before running Docker:
 
 ```bash
-export VITE_TOKEN_ADDRESS=0x426C1...
-export VITE_FAUCET_ADDRESS=0xb65a...
-export VITE_RPC_URL=https://sepolia.infura.io/v3/...
+export VITE_TOKEN_ADDRESS=0xC03C396369C2876949dd0Cc228214927c00b80aC
+export VITE_FAUCET_ADDRESS=0xf3762351Bc172cb9C709cd7385Fa0889E75860E2
+export VITE_RPC_URL=https://1rpc.io/sepolia
 docker-compose up
 ```
 

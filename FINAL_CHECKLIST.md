@@ -10,7 +10,7 @@
 - ✅ ERC-20 implementation
 - ✅ Max supply: 1,000,000 tokens
 - ✅ Minting control (faucet only)
-- ✅ Deployed to Sepolia: `0x426C1217EE4B94dcb63BD9561864Ec72F8B9e2df`
+- ✅ Deployed to Sepolia: `0xC03C396369C2876949dd0Cc228214927c00b80aC`
 - ✅ Verified on Etherscan
 
 ### TokenFaucet.sol
@@ -18,7 +18,7 @@
 - ✅ Cooldown: 24 hours
 - ✅ Lifetime limit: 1,000 tokens
 - ✅ Pause/unpause: Owner-only
-- ✅ Deployed to Sepolia: `0xb65a086501207b787c60b2e9bA9dCD2c147bc654`
+- ✅ Deployed to Sepolia: `0xf3762351Bc172cb9C709cd7385Fa0889E75860E2`
 - ✅ Verified on Etherscan
 
 ### Testing
@@ -323,14 +323,14 @@
 ### Sepolia Testnet
 - ✅ Network: Sepolia (Chain ID: 11155111)
 - ✅ RPC Provider: Infura
-- ✅ Token Contract: `0x426C1217EE4B94dcb63BD9561864Ec72F8B9e2df`
-- ✅ Faucet Contract: `0xb65a086501207b787c60b2e9bA9dCD2c147bc654`
+- ✅ Token Contract: `0xC03C396369C2876949dd0Cc228214927c00b80aC`
+- ✅ Faucet Contract: `0xf3762351Bc172cb9C709cd7385Fa0889E75860E2`
 - ✅ Both verified on Etherscan
 - ✅ Ready for testing
 
 ### Etherscan Links
-- ✅ Token: https://sepolia.etherscan.io/address/0x426C1217EE4B94dcb63BD9561864Ec72F8B9e2df
-- ✅ Faucet: https://sepolia.etherscan.io/address/0xb65a086501207b787c60b2e9bA9dCD2c147bc654
+- ✅ Token: https://sepolia.etherscan.io/address/0xC03C396369C2876949dd0Cc228214927c00b80aC
+- ✅ Faucet: https://sepolia.etherscan.io/address/0xf3762351Bc172cb9C709cd7385Fa0889E75860E2
 
 ---
 
