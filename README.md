@@ -29,6 +29,78 @@ The Web3 Token Faucet DApp is a production-ready application that demonstrates:
 
 ## 🏗️ Architecture
 
+### System Architecture Diagram
+
+```mermaid
+graph TB
+    subgraph Blockchain["⛓️ Ethereum Sepolia Blockchain"]
+        Token["🪙 Token Contract<br/>(ERC-20)<br/>Address: 0x426C1..."]
+        Faucet["💧 Faucet Contract<br/>(Distribution Logic)<br/>Address: 0xb65a..."]
+        Token -->|mints tokens| Faucet
+        Faucet -->|tracks claims| Storage["📦 User State<br/>lastClaimAt<br/>totalClaimed"]
+    end
+    
+    subgraph Frontend["🎨 Frontend Layer"]
+        Browser["🌐 Browser<br/>React + Vite"]
+        Wallet["🔐 MetaMask<br/>Wallet"]
+        UI["📱 UI Components<br/>Connection | Balance<br/>Claim | Timer | Messages"]
+        Utils["⚙️ Utilities<br/>wallet.js | contracts.js<br/>eval.js"]
+        Browser --> UI
+        Browser --> Utils
+        Wallet <-->|connect| Browser
+    end
+    
+    subgraph Network["🌐 Network Layer"]
+        Provider["RPC Provider<br/>ethers.js<br/>Infura/Alchemy"]
+    end
+    
+    subgraph Evaluation["🧪 Evaluation Interface"]
+        EvalApi["window.__EVAL__<br/>connectWallet()<br/>requestTokens()<br/>getBalance()<br/>canClaim()"]
+    end
+    
+    Frontend <-->|ethers.js| Provider
+    Provider <-->|RPC calls| Blockchain
+    Browser <-->|programmatic access| EvalApi
+    EvalApi <-->|calls contracts| Blockchain
+    
+    subgraph Docker["🐳 Docker Deployment"]
+        Container["web3-faucet<br/>Node.js<br/>Port 5000<br>/health endpoint"]
+    end
+    
+    Browser -.->|served by| Container
+```
+
+### Component Flow Diagram
+
+```mermaid
+sequenceDiagram
+    User->>+Browser: Opens http://localhost:5000
+    Browser->>-UI: Render Connect Wallet
+    User->>+MetaMask: Click "Connect Wallet"
+    MetaMask->>-Browser: User approves connection
+    Browser->>WalletManager: initialize()
+    WalletManager->>+Provider: Get signer
+    Provider->>-WalletManager: Signer ready
+    WalletManager->>ContractManager: Set signer
+    Browser->>UI: Show Balance & Claim Button
+    
+    User->>+Browser: Click "Claim Tokens"
+    Browser->>ContractManager: requestTokens()
+    ContractManager->>+MetaMask: Send transaction
+    MetaMask->>User: Confirm transaction
+    User->>+Faucet: Approve transaction
+    Faucet->>Token: mint(user, 100)
+    Token->>+Storage: Update balance
+    Storage->>-Faucet: Confirmed
+    Faucet->>+Browser: Transaction hash
+    Browser->>UI: Show success message
+    Browser->>ContractManager: getBalance()
+    ContractManager->>+Token: balanceOf(user)
+    Token->>-ContractManager: New balance
+    ContractManager->>UI: Update display
+    UI->>UI: Start cooldown timer
+```
+
 ### Smart Contract Layer
 
 ```
@@ -150,6 +222,45 @@ Docker Containerization
    ```bash
    curl http://localhost:5000/health
    ```
+
+## 📸 Visual Demonstrations
+
+### Screenshots
+
+The application has been tested and documented with comprehensive screenshots showing all key features:
+
+- **[01-wallet-connection.png](screenshots/01-wallet-connection.png)** - Initial wallet connection interface
+- **[02-wallet-connected.png](screenshots/02-wallet-connected.png)** - Successfully connected wallet display
+- **[03-balance-display.png](screenshots/03-balance-display.png)** - Token balance and claim button
+- **[04-successful-claim.png](screenshots/04-successful-claim.png)** - Successful token claim with transaction hash
+- **[05-cooldown-timer.png](screenshots/05-cooldown-timer.png)** - Active cooldown countdown timer
+- **[06-cooldown-error.png](screenshots/06-cooldown-error.png)** - Error message during cooldown period
+- **[07-limit-reached.png](screenshots/07-limit-reached.png)** - Lifetime limit reached error
+- **[08-paused-state.png](screenshots/08-paused-state.png)** - Faucet paused state
+- **[09-tx-confirmation.png](screenshots/09-tx-confirmation.png)** - MetaMask transaction confirmation
+- **[10-transaction-pending.png](screenshots/10-transaction-pending.png)** - Transaction pending state
+
+For detailed screenshot information, see [screenshots/README.md](screenshots/README.md)
+
+### Video Demonstration
+
+**Coming Soon** - A 2-5 minute video demonstration showing:
+- ✅ Wallet connection to MetaMask
+- ✅ Initial balance display and claim eligibility check
+- ✅ Successful token claim transaction
+- ✅ Cooldown period enforcement with error handling
+- ✅ Real-time balance updates after confirmation
+- ✅ Responsive UI behavior
+
+The video will include narration explaining each step and demonstrating proper error handling.
+
+### Architecture Diagrams
+
+**System Architecture**: Shows the complete flow from frontend React components through ethers.js provider, to smart contracts on Sepolia blockchain. Includes wallet interaction and evaluation interface.
+
+**Component Flow**: Sequence diagram showing the interaction between user, browser, MetaMask, and blockchain during wallet connection and token claim operations.
+
+Both diagrams are embedded in the Architecture section above using Mermaid diagram syntax.
 
 ## 💻 Smart Contracts
 
