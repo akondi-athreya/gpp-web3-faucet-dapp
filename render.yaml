@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: web3-faucet-dapp
+    env: docker
+    dockerfilePath: ./frontend/Dockerfile
+    dockerContext: ./frontend
+    plan: free
+    healthCheckPath: /health
+    envVars:
+      - key: PORT
+        value: 5000
+      - key: VITE_TOKEN_ADDRESS
+        value: 0xC03C396369C2876949dd0Cc228214927c00b80aC
+      - key: VITE_FAUCET_ADDRESS
+        value: 0xf3762351Bc172cb9C709cd7385Fa0889E75860E2
+      - key: VITE_RPC_URL
+        value: https://1rpc.io/sepolia
