@@ -137,59 +137,20 @@ async function main() {
   console.log("Deployment info saved to:", deploymentFile);
   console.log();
 
-  // Contract verification on Etherscan
-  if (process.env.ETHERSCAN_API_KEY) {
-    console.log("Waiting for block confirmations before verification...");
-    // Wait for 5 block confirmations
-    const tokenReceipt = await token.deploymentTransaction().wait(5);
-    const faucetReceipt = await faucet.deploymentTransaction().wait(5);
-    console.log("Block confirmations completed\n");
-
-    console.log("Verifying Token contract on Etherscan...");
-    try {
-      await run("verify:verify", {
-        address: tokenAddress,
-        constructorArguments: [futureFaucetAddress],
-      });
-      console.log("✓ Token contract verified");
-    } catch (error) {
-      if (error.message.includes("Already Verified")) {
-        console.log("✓ Token contract already verified");
-      } else {
-        console.error("✗ Token verification failed:", error.message);
-      }
-    }
-    console.log();
-
-    console.log("Verifying TokenFaucet contract on Etherscan...");
-    try {
-      await run("verify:verify", {
-        address: faucetAddress,
-        constructorArguments: [tokenAddress],
-      });
-      console.log("✓ TokenFaucet contract verified");
-    } catch (error) {
-      if (error.message.includes("Already Verified")) {
-        console.log("✓ TokenFaucet contract already verified");
-      } else {
-        console.error("✗ TokenFaucet verification failed:", error.message);
-      }
-    }
-    console.log();
-  } else {
-    console.log("⚠ ETHERSCAN_API_KEY not found in environment variables");
-    console.log("Skipping contract verification");
-    console.log("To verify contracts manually, run:");
-    console.log(`npx hardhat verify --network sepolia ${tokenAddress} ${futureFaucetAddress}`);
-    console.log(`npx hardhat verify --network sepolia ${faucetAddress} ${tokenAddress}`);
-    console.log();
-  }
+  // Contract verification on Etherscan (optional - can be done manually)
+  console.log("⚠ Skipping automatic Etherscan verification");
+  console.log("To verify contracts manually after 5 block confirmations, run:");
+  console.log(`npx hardhat verify --network sepolia ${tokenAddress} ${deployer.address}`);
+  console.log(`npx hardhat verify --network sepolia ${faucetAddress} ${tokenAddress}`);
+  console.log();
 
   console.log("=".repeat(60));
   console.log("DEPLOYMENT SUMMARY");
   console.log("=".repeat(60));
   console.log("Token Address:", tokenAddress);
   console.log("TokenFaucet Address:", faucetAddress);
+  console.log("Tokens Minted to Faucet: 10,000");
+  console.log("Minter Role: Faucet");
   console.log();
   console.log("View on Etherscan:");
   const network = await ethers.provider.getNetwork();
