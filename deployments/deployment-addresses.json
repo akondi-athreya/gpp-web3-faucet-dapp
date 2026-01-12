@@ -1,18 +1,18 @@
 {
-  "network": "sepolia",
-  "chainId": "11155111",
-  "deployer": "0x9AbbA67cE81b377DC7EaD92529bd98778a6bF9DC",
-  "timestamp": "2026-01-02T11:35:15.777Z",
+  "network": "hardhat",
+  "chainId": "31337",
+  "deployer": "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266",
+  "timestamp": "2026-01-12T13:18:24.276Z",
   "contracts": {
     "Token": {
-      "address": "0xC03C396369C2876949dd0Cc228214927c00b80aC",
+      "address": "0x5FbDB2315678afecb367f032d93F642f64180aa3",
       "name": "Faucet Token",
       "symbol": "FAUCET",
       "maxSupply": "1000000000000000000000000"
     },
     "TokenFaucet": {
-      "address": "0xf3762351Bc172cb9C709cd7385Fa0889E75860E2",
-      "admin": "0x9AbbA67cE81b377DC7EaD92529bd98778a6bF9DC",
+      "address": "0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512",
+      "admin": "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266",
       "faucetAmount": "100000000000000000000",
       "cooldownTime": "86400",
       "maxClaimAmount": "1000000000000000000000"

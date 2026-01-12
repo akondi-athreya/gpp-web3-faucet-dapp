@@ -1,5 +1,3 @@
-version: "3.8"
-
 services:
   web3-faucet:
     build:
@@ -7,7 +5,7 @@ services:
       dockerfile: Dockerfile
     container_name: web3-faucet-dapp
     ports:
-      - "${PORT:-5000}:5000"
+      - "3000:5000"
     environment:
       - PORT=5000
       - VITE_TOKEN_ADDRESS=${VITE_TOKEN_ADDRESS:-0xC03C396369C2876949dd0Cc228214927c00b80aC}

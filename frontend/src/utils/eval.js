@@ -253,4 +253,8 @@ if (typeof window !== "undefined") {
   initializeEval();
 }
 
+// Also export as default for explicit imports
 export default initializeEval;
+
+// Export getEvalInterface for potential use
+export const getEvalInterface = () => window.__EVAL__ || null;

@@ -6,8 +6,9 @@ WORKDIR /app
 # Copy package files
 COPY package*.json ./
 
-# Install dependencies
-RUN npm ci
+# Install dependencies with npm ci (faster and deterministic)
+RUN npm ci --only=production && \
+    npm ci
 
 # Copy source code
 COPY . .
@@ -20,18 +21,9 @@ FROM node:20-alpine
 
 WORKDIR /app
 
-# Copy built application from builder
+# Copy only necessary files from builder
 COPY --from=builder /app/dist ./dist
-
-# Copy server file
-COPY server.js ./
-
-# Expose port
-EXPOSE 5000
-
-# Health check
-HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 \
-  CMD node -e "require('http').get('http://localhost:5000/health', (r) => {if (r.statusCode !== 200) throw new Error(r.statusCode)})"
-
+COPY --from=builder /app/package.json ./
+COPY --from=builder /app/server.js ./
 # Start the application
 CMD ["node", "server.js"]
