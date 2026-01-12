@@ -7,7 +7,6 @@ function App() {
   const [balance, setBalance] = useState("0");
   const [canClaim, setCanClaim] = useState(false);
   const [remainingAllowance, setRemainingAllowance] = useState("0");
-  const [lastClaimAt, setLastClaimAt] = useState("0");
   const [faucetAmount, setFaucetAmount] = useState("0");
   const [cooldownTime, setCooldownTime] = useState(86400);
   const [isFaucetPaused, setIsFaucetPaused] = useState(false);
@@ -81,7 +80,6 @@ function App() {
       setBalance(userBalance);
       setCanClaim(claimEligible);
       setRemainingAllowance(allowance);
-      setLastClaimAt(lastClaim);
       setIsFaucetPaused(paused);
 
       if (!claimEligible && parseInt(lastClaim) > 0) {
@@ -132,7 +130,6 @@ function App() {
     setBalance("0");
     setCanClaim(false);
     setRemainingAllowance("0");
-    setLastClaimAt("0");
     setTimeRemaining(0);
   };
 

@@ -211,7 +211,7 @@ class ContractManager {
       });
 
       // Wait for transaction confirmation
-      const receipt = await tx.wait();
+      await tx.wait();
       
       this.notifyListeners("transactionConfirmed", {
         hash: tx.hash,
@@ -288,19 +288,16 @@ class ContractManager {
 
     try {
       // Listen for TokensClaimed events
-      this.faucetContract.on(
-        "TokensClaimed",
-        (user, amount, timestamp, event) => {
-          this.notifyListeners("tokensClaimed", {
-            user,
-            amount: amount.toString(),
-            timestamp: timestamp.toString(),
-          });
-        }
-      );
+      this.faucetContract.on("TokensClaimed", (user, amount, timestamp) => {
+        this.notifyListeners("tokensClaimed", {
+          user,
+          amount: amount.toString(),
+          timestamp: timestamp.toString(),
+        });
+      });
 
       // Listen for FaucetPaused events
-      this.faucetContract.on("FaucetPaused", (paused, event) => {
+      this.faucetContract.on("FaucetPaused", (paused) => {
         this.notifyListeners("faucetPaused", { paused });
       });
     } catch (error) {
